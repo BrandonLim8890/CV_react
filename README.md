@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Creating CV application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple application made from The Odin Project.
 
 ## Available Scripts
 
