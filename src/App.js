@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import NavBar from './components/NavBar'
+import PersonalInformation from './components/sections/PersonalInformation'
+import EducationTraining from './components/sections/EducationTraining'
+import WorkExperience from './components/sections/WorkExperience'
+import CreateCV from './components/sections/CreateCV'
+class App extends Component {
+	constructor() {
+		super()
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		this.state = {}
+
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmitBtn.bind(this)
+	}
+
+	handleChange(key, value) {
+		this.setState({ [key]: value })
+	}
+
+	handleSubmitBtn() {}
+
+	render() {
+		return (
+			<div>
+				<NavBar />
+				<div className='container-xl'>
+					<PersonalInformation handleUpdate={this.handleChange} />
+					<EducationTraining handleUpdate={this.handleChange} />
+					<WorkExperience handleChange={this.handleChange} />
+					<CreateCV handleSubmitBtn={this.handleSubmitBtn} />
+				</div>
+			</div>
+		)
+	}
 }
 
-export default App;
+export default App
